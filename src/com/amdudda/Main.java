@@ -8,17 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-                // for now, a command-line calendar; transfer to GUI later
-        // let's just make December work for now.
-        LocalDate dateToUse = LocalDate.now();
-//        System.out.println(dateToUse);
-        //int daysInFirstWeek = dateToUse.get();
-//        System.out.println(dateToUse.getDayOfMonth());
-        String cal = calendarBuilder(dateToUse); // LocalDate.of(2016,1,15));
-        System.out.println(cal);
-
         Calendar c_scrn = new Calendar();
     }
+/*
+    // used in initial proof-of-concept development.
 
     private static String getBorder() {
         String line = "";
@@ -83,6 +76,7 @@ public class Main {
         return calList;
     }
 
+*/
 
 }
 
