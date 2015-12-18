@@ -21,13 +21,14 @@ public class Calendar extends JFrame {
     private JTextField selDateTextField;
     private JButton revOneMonthButton;
     private JButton revOneYearButton;
+    private JButton useThisDateButton;
     private CalendarTableModel calTM;
 
-    Calendar() {
-        selectedDate = LocalDate.now();
+    Calendar(LocalDate ld, JTextField textField) {
+        selectedDate = ld;
 
         setContentPane(calendarRootPanel);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
         setSize(400,300);
         setMonthLabel();
@@ -41,7 +42,8 @@ public class Calendar extends JFrame {
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                //System.exit(0);
+                dispose();
             }
         });
         fwdOneMonthButton.addActionListener(new ActionListener() {
@@ -83,6 +85,13 @@ public class Calendar extends JFrame {
                     // just do nothing if it can't parse the empty string.
                     return;
                 }
+            }
+        });
+        useThisDateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textField.setText(selDateTextField.getText());
+                dispose();
             }
         });
     }
