@@ -35,6 +35,10 @@ public class Calendar extends JFrame {
         selDateTextField.setText(selectedDate.toString());
         calTM = new CalendarTableModel(selectedDate);
         calendarTable.setModel(calTM);
+        // the following three set up the table so only the selected cell is highlighted when clicked.
+        calendarTable.setRowSelectionAllowed(false);
+        calendarTable.setColumnSelectionAllowed(false);
+        calendarTable.setCellSelectionEnabled(true);
         for (int i = 0; i < calTM.getColcount(); i++) {
             calendarTable.getColumnModel().getColumn(i).setMaxWidth(50);
         }
